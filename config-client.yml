@@ -1,0 +1,29 @@
+spring:
+  profiles:
+    active: dev
+    
+---
+server:
+  port: 8201
+spring:
+  profiles: dev
+  application:
+    name: pringcloud-config-client
+# eureka配置
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka/,http://localhost:7002/eureka/,http://localhost:7003/eureka/
+
+---
+server:
+  port: 8202
+spring:
+  profiles: test
+  application:
+    name: pringcloud-config-client
+# eureka配置
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka/,http://localhost:7002/eureka/,http://localhost:7003/eureka/
