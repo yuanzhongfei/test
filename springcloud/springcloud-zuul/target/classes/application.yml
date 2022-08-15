@@ -1,0 +1,15 @@
+server:
+  port: 9527
+spring:
+  application:
+    name: springcloud-zuul
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka/,http://localhost:7002/eureka/,http://localhost:7003/eureka/
+zuul:
+  routes:
+    mydept.serviceId: springcloud-provider # eureka注册中心的服务提供方路由名称
+    mydept.path: /mydept/** # 将eureka注册中心的服务提供方路由名称 改为自定义路由名称
+#  ignored-services: "*" # 不能再使用这个路径访问了，*： 忽略,隐藏全部的服务名称~
+#  prefix: /cvzhanshi # 设置公共的前缀
